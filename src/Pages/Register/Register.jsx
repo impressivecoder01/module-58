@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import registerLottieData from "../../assets/Lottie/Animation - 1733868842626.json";
 import Lottie from "lottie-react";
+import AuthContext from "../../context/AuthContext/AuthContext";
 const Register = () => {
+  const {createUser} = useContext(AuthContext)
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -9,6 +11,16 @@ const Register = () => {
     const password = form.password.value;
     console.log(email, password);
     // password validation
+    // sh
+    createUser(email, password)
+    .then(result => {
+      console.log(result.user)
+    })
+    .catch(error => {
+      console.log(error.message)
+    })
+
+
   };
   return (
     <div>
