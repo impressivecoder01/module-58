@@ -25,7 +25,8 @@ import JobApply from "../Pages/JobApply";
             <JobDetails></JobDetails>
           </PrivateRoute>,
           loader: ({params}) => fetch(`http://localhost:3000/jobs/${params.id}`)
-        },{
+        },
+        {
           path: '/jobApply/:id',
           element:<PrivateRoute><JobApply></JobApply></PrivateRoute>
         },

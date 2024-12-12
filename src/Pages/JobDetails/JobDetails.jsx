@@ -10,9 +10,11 @@ const JobDetails = () => {
             <p>title:{title}</p>
             <p>company:{company}</p>
             <p >applicationDeadline:{applicationDeadline}</p>
-            <Link to={`/jobApply/${_id}`}></Link>
+            <Link to={`/jobApply/${_id}`}>
             <button className='btn btn-primary
             '>Apply Now</button>
+            </Link>
+            
         </div>
     );
 };
