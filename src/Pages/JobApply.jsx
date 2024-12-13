@@ -1,9 +1,11 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 
 const JobApply = () => {
     const {id} = useParams()
-    console.log(id)
+    const {user}= useAuth;
+    console.log(id,user)
     const submitJobApplication = e => {
         e.preventDefault()
         const from = e.target;
@@ -11,6 +13,13 @@ const JobApply = () => {
         const github = from.github.value;
         const resume = from.resume.value;
         console.log(linkedIn, github, resume)
+        const jobApplication = {
+            job_id: id,
+            applicant_email: user.email,
+            linkedIn,
+            github,
+            resume
+        }
     }
     return (
         <div className="card bg-base-100 w-full  shadow-2xl">
