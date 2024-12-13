@@ -8,7 +8,7 @@ const SignIn = () => {
     const location = useLocation()
     const navigate = useNavigate();
     console.log('in sign in page', location)
-    const form = location.state || '/';
+    const from = location.state || '/';
   const handleSignIn = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -18,7 +18,7 @@ const SignIn = () => {
     signInUser(email, password)
     .then(result => {
         console.log('sign in user', result.user)
-        navigate(form)
+        navigate(from)
     })
     .catch(error => {
         console.log(error.message)

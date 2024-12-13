@@ -23,7 +23,7 @@ const JobApply = () => {
     }
     return (
         <div className="card bg-base-100 w-full  shadow-2xl">
-      <h1 className="text-5xl font-bold">Apply now!</h1>
+      <h1 className="text-5xl font-bold">Apply for job!</h1>
       <form onSubmit={submitJobApplication} className="card-body">
         <div className="form-control">
           <label className="label">
@@ -46,7 +46,7 @@ const JobApply = () => {
           
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Apply</button>
+          <button className="btn btn-primary">Apply with the valid info</button>
         </div>
       </form>
     </div>
