@@ -10,13 +10,13 @@ const Navbar = () => {
         console.log("signOut successfully");
       })
       .catch((error) => {
-        console.log("failed to signOut");
+        console.log("failed to signOut",error);
       });
   };
   const links = (
     <>
      <li><NavLink to='/'>Home</NavLink></li>
-     <li><NavLink to='/'>Home</NavLink></li>
+     <li><NavLink to='/myApplications'>My Applications</NavLink></li>
       
     </>
   );
