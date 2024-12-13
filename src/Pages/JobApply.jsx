@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
+import AuthContext from '../context/AuthContext/AuthContext';
 
 const JobApply = () => {
     const {id} = useParams()
-    const {user}= useAuth;
+    // const {user}= useAuth;
+    const {user} = useContext(AuthContext)
     console.log(id,user)
     const submitJobApplication = e => {
         e.preventDefault()
@@ -20,6 +22,17 @@ const JobApply = () => {
             github,
             resume
         }
+        fetch('http://localhost:3000/job_applications',{
+          method: 'POST',
+          headers: {
+            'content-type' : 'application/json'
+          },
+          body: JSON.stringify(jobApplication)
+        })
+        .then(res=> res.json())
+        .then(data => {
+          console.log(data)
+        })
     }
     return (
         <div className="card bg-base-100 w-full  shadow-2xl">
